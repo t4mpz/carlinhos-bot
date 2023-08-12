@@ -1,0 +1,11 @@
+{
+  "VERSION": 0.1,
+  "AUTHOR": "t4mpz",
+  "DATABASE": {
+	  "HOST": "localhost",
+	  "USER": "",
+	  "PASSWORD": "",
+	  "TYPE": "PSQL|MySQL|..."
+	},
+  "BOT": "<bot-token>"
+}
