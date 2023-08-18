@@ -17,7 +17,8 @@ class TelegramScrapper:
 	OPTIONS_SCHEME = {
 		"last_downloaded": None,  # datetime
 		'runned_at': None,
-		"replying in channels": [1079145452970188832]
+		"telegram": True,
+		"replying_to": []
 	}
 
 	BASE_TIME_FORMAT = "%Y-%m-%dT%H:%M:%S"
@@ -55,6 +56,7 @@ class TelegramScrapper:
 			image = item.find_element_by_class_name('tgme_widget_message_photo_wrap').value_of_css_property("background-image")
 			image_list.append((datetime.strptime(date_post[:-6], self.BASE_TIME_FORMAT), image[5:-2]))
 		self.cache_list = sorted(image_list, key=lambda x: x[0])
+		wbd_profile.close()
 
 	def download_files(self):
 		c = 0

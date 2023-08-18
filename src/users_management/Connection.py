@@ -15,9 +15,9 @@ class Connection(object):
 		)
 		self.using_file = config_path
 
-	def __del__(self):
-		with open(self.using_file, 'w') as config:
-			config.write(dumps(self.config, indent="\t"))
+	# def __del__(self):
+	# 	with open(self.using_file, 'w') as config:
+	# 		config.write(dumps(self.config, indent="\t"))
 
 	@property
 	def cursor(self):
